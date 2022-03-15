@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -39,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'location_field.apps.DefaultConfig',
     'rest_framework',
-    # 'places',
+    'places',
     'base',
 ]
 
@@ -64,6 +65,7 @@ TEMPLATES = [
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
+                'django.template.context_processors.media',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
@@ -123,15 +125,19 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'medias/')
+
+MEDIA_URL = '/media/'
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # PLACES
-PLACES_MAPS_API_KEY='AIzaSyB6qpqFxfCyWFtrjGmoXnVYY75lioHrTxU'
+PLACES_MAPS_API_KEY='AIzaSyB0Bab7ahekrb4MYtJikv5zhetfI4KyDJo'
 PLACES_MAP_WIDGET_HEIGHT=480
-PLACES_MAP_OPTIONS='{"center": { "lat": 38.971584, "lng": -95.235072 }, "zoom": 10}'
+PLACES_MAP_OPTIONS='{"center": { "lat": 5.971584, "lng": -4.235072 }, "zoom": 10}'
 PLACES_MARKER_OPTIONS='{"draggable": true}'
 
 # REST_FRAMEWORK
