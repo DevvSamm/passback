@@ -79,6 +79,7 @@ WSGI_APPLICATION = 'passpass.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',
@@ -87,6 +88,7 @@ WSGI_APPLICATION = 'passpass.wsgi.application'
 # }
 
 import pymysql
+
 
 DATABASES = {
     'default':{
@@ -98,6 +100,15 @@ DATABASES = {
 }
 pymysql.version_info = (1, 4, 2, "final", 0)
 pymysql.install_as_MySQLdb()
+
+#DATABASES = {
+#    'default':{
+#        'ENGINE':'django.db.backends.mysql',
+#        'OPTIONS':{
+#            'read_default_file':os.path.join(BASE_DIR,'my.cnf')
+#        }
+#    }
+#}
 
 
 # Password validation
