@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-awg)q&t#8ln+vgb6up&6c*y19o=pq=zg-wo$yd(nzoxuw3(r=h
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1','passback.beone.ci','https://passback.beone.ci/']
 
 
 # Application definition
@@ -87,9 +87,6 @@ WSGI_APPLICATION = 'passpass.wsgi.application'
 #     }
 # }
 
-import pymysql
-
-
 DATABASES = {
     'default':{
         'ENGINE':'django.db.backends.mysql',
@@ -98,8 +95,6 @@ DATABASES = {
         }
     }
 }
-pymysql.version_info = (1, 4, 2, "final", 0)
-pymysql.install_as_MySQLdb()
 
 #DATABASES = {
 #    'default':{
