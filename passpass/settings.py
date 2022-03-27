@@ -146,6 +146,8 @@ STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'medias/')
 
+STATIC_ROOT  = os.path.join(BASE_DIR,'statics/')
+
 MEDIA_URL = '/media/'
 
 # Default primary key field type
