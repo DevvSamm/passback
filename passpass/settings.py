@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-awg)q&t#8ln+vgb6up&6c*y19o=pq=zg-wo$yd(nzoxuw3(r=h
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1','passback.beone.ci','https://passback.beone.ci/']
 
 
 # Application definition
@@ -78,6 +78,7 @@ WSGI_APPLICATION = 'passpass.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
+
 
 
 DATABASES = {
@@ -156,6 +157,8 @@ STATICFILES_DIRS = [
 ]
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'medias/')
+
+STATIC_ROOT  = os.path.join(BASE_DIR,'statics/')
 
 MEDIA_URL = '/media/'
 
