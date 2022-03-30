@@ -5,6 +5,7 @@ from django.http import HttpResponse, JsonResponse
 from django.core import serializers
 from base.models import Hotel
 from base.serializer import HotelSerializer
+from django.views import generic
 
 # Create your views here.
 def get_hotel(request):
@@ -26,3 +27,11 @@ def get_hote(request):
     
     results = HotelSerializer(list, many=True)
     return JsonResponse(results.data, safe=False)
+
+
+class CreateHotelForm(generic.CreateView):
+    model = Hotel
+    fields = ['name', 'localisation', 'contact', 'contact2', 'lng', 'lat', 'cover', 'wifi', 'climatisation', 'piscine', 'parking', 'place']
+    success_url = '/'
+
+    template_name = 'base/create_hotel.html'
