@@ -80,35 +80,35 @@ WSGI_APPLICATION = 'passpass.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
-import pymysql
-
-
 DATABASES = {
-    'default':{
-        'ENGINE':'django.db.backends.mysql',
-        'OPTIONS':{
-            'read_default_file':os.path.join(BASE_DIR,'my.cnf')
-        }
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-pymysql.version_info = (1, 4, 2, "final", 0)
-pymysql.install_as_MySQLdb()
 
-#DATABASES = {
+# import pymysql
+
+
+# DATABASES = {
+#     'default':{
+#         'ENGINE':'django.db.backends.mysql',
+#         'OPTIONS':{
+#             'read_default_file':os.path.join(BASE_DIR,'my.cnf')
+#         }
+#     }
+# }
+# pymysql.version_info = (1, 4, 2, "final", 0)
+# pymysql.install_as_MySQLdb()
+
+# DATABASES = {
 #    'default':{
 #        'ENGINE':'django.db.backends.mysql',
 #        'OPTIONS':{
 #            'read_default_file':os.path.join(BASE_DIR,'my.cnf')
 #        }
 #    }
-#}
+# }
 
 
 # Password validation
@@ -148,6 +148,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATIC_ROOT = os.path.join(BASE_DIR, "statics/")
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'medias/')
 
